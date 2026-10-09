@@ -5,89 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Coffee Business — Roadmap đầy đủ + mô hình khả thi</title>
 <style>
-:root{--hero:#1f6b4f;--hero-ink:#fff;--hero-mut:#d6e8dc;--call:#fbefc9;--call-ink:#16211c;--call-mut:#4d4a39;--part:#e0a526;--part-ink:#16211c;--part-lab:#14442f;--bg:#f5f7f2;--card:#ffffff;--ink:#16211c;--muted:#5a6a62;--line:#d3dad4;--ac:#1f6b4f;--ac2:#e0a526;--hd:#e3e9e3;--ok:#1f6b4f;--bad:#b5442e;--dk:#14221c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1713;--card:#16211b;--ink:#e8efe9;--muted:#93a39a;--line:#2a3a31;--ac:#5fc397;--ac2:#eab94a;--hd:#1d2b24;--ok:#5fc397;--bad:#ee8a73;--dk:#0a110e;--hero:#0a110e;--hero-ink:#f2f5f2;--hero-mut:#c5d1ca;--call:#0a110e;--call-ink:#fff;--call-mut:#c5d1ca;--part:#0a110e;--part-ink:#fff;--part-lab:#eab94a}}
-:root[data-theme="dark"]{--bg:#0f1713;--card:#16211b;--ink:#e8efe9;--muted:#93a39a;--line:#2a3a31;--ac:#5fc397;--ac2:#eab94a;--hd:#1d2b24;--ok:#5fc397;--bad:#ee8a73;--dk:#0a110e;--hero:#0a110e;--hero-ink:#f2f5f2;--hero-mut:#c5d1ca;--call:#0a110e;--call-ink:#fff;--call-mut:#c5d1ca;--part:#0a110e;--part-ink:#fff;--part-lab:#eab94a}
+:root{--bg:#fbfbf9;--card:#ffffff;--hd:#f0f2ee;--line:#e1e5df;--ink:#141816;--muted:#5b665f;--ac:#0d6b4d;--on-ac:#fff;--ac2:#f2b01e;--ok:#0d6b4d;--bad:#b3402b;--tint:rgba(13,107,77,.05);--navbg:rgba(255,255,255,.92);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0f0d;--card:#141a17;--hd:#1c2420;--line:#2a332e;--ink:#eef2ee;--muted:#9aa8a0;--ac:#4fd1a1;--on-ac:#06251a;--ac2:#f5c451;--ok:#4fd1a1;--bad:#f08a73;--tint:rgba(79,209,161,.06);--navbg:rgba(20,26,23,.92);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0f0d;--card:#141a17;--hd:#1c2420;--line:#2a332e;--ink:#eef2ee;--muted:#9aa8a0;--ac:#4fd1a1;--on-ac:#06251a;--ac2:#f5c451;--ok:#4fd1a1;--bad:#f08a73;--tint:rgba(79,209,161,.06);--navbg:rgba(20,26,23,.92);color-scheme:dark}
+:root[data-theme="light"]{color-scheme:light}
 *{box-sizing:border-box}html{scroll-padding-top:64px;scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .c{max-width:1120px;margin:auto;padding:0 24px}
 p{margin:0 0 10px}.card p:last-child{margin-bottom:0}
 :focus-visible{outline:2px solid var(--ac);outline-offset:2px}
-header{background:var(--hero);color:var(--hero-ink);padding:64px 0 0}
+header{background:linear-gradient(135deg,#0d2920,#144030);color:#fff;padding:68px 0 0;border-bottom:1px solid #214c3b}
 .hero{display:grid;grid-template-columns:1.5fr .7fr;gap:32px;align-items:center}
 h1{font-size:clamp(34px,5.4vw,66px);line-height:1.04;margin:0 0 20px;letter-spacing:-.03em;font-weight:800}
-header p{max-width:56ch;color:var(--hero-mut);font-size:18px}
-.warn{background:#f6e7b8;color:#4a3a0c;border-radius:6px;padding:12px 16px;font-size:14px;margin-top:22px;max-width:60ch}
+header p{max-width:56ch;color:#cfe3d8;font-size:18px}
+.warn{background:#f6e7b8;color:#4a3a0c;border-radius:8px;padding:12px 16px;font-size:14px;margin-top:22px;max-width:60ch}
 .phin{width:100%;max-width:230px;justify-self:center}
 .drop{animation:drip 2.6s cubic-bezier(.5,0,.9,.6) infinite}
 @keyframes drip{0%{transform:translateY(0);opacity:0}12%{opacity:1}80%{transform:translateY(66px);opacity:1}100%{transform:translateY(72px);opacity:0}}
 @media(prefers-reduced-motion:reduce){.drop{animation:none;opacity:1}}
-.path{list-style:none;margin:44px 0 0;padding:0 0 36px;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
-.path::before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:#ffffff30}
+.path{list-style:none;margin:44px 0 0;padding:0 0 38px;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.path::before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:#ffffff33}
 .path li{position:relative;padding:28px 12px 0 0}
-.path li::before{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--ac2)}
+.path li::before{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:#f2b01e}
 .path li:last-child::before{background:#fff}
-.path b{display:block;font-size:22px;font-weight:700}.path span{font-size:13px;color:var(--hero-mut)}
-nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--line);z-index:10}
-nav .c{max-width:none;display:flex;gap:4px;overflow-x:auto;padding:0 12px}
+.path b{display:block;font-size:22px;font-weight:700}.path span{font-size:13px;color:#cfe3d8}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--navbg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+nav .c{max-width:none;display:flex;gap:4px;align-items:center;overflow-x:auto;padding:0 12px}
 nav a{flex:1 1 auto;text-align:center;white-space:nowrap;color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;padding:14px 14px 11px;border-bottom:3px solid transparent}
 nav a:hover{color:var(--ink)}nav a.on{color:var(--ink);border-bottom-color:var(--ac2)}
+.th{display:inline-flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;margin-left:6px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:17px;cursor:pointer;line-height:1}.th:hover{border-color:var(--ac)}
 .toc{display:grid;grid-template-columns:repeat(4,1fr);gap:0 28px;margin-top:14px}
-.toc a{font-size:14.5px;color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--line)}.toc a:hover{color:var(--ac)}.toc a span{color:var(--muted);margin-right:8px;font-variant-numeric:tabular-nums}
-.part{background:var(--part);color:var(--part-ink);padding:28px 0;margin-top:40px}
-.part .c{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}.part b{color:var(--part-lab);font-size:15px;font-weight:700}.part span{font-size:clamp(20px,2.4vw,28px);font-weight:700;letter-spacing:-.01em}
-section{padding:52px 0 8px}
-h2{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:baseline;font-size:clamp(25px,3vw,36px);line-height:1.15;margin:0 0 12px;letter-spacing:-.025em;font-weight:800}
-h2 .no{font-size:.55em;color:var(--ac);font-weight:700;font-variant-numeric:tabular-nums}
+.toc a{font-size:14.5px;color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--line)}.toc a:hover{color:var(--ac)}.toc a span{color:var(--ac);font-weight:700;margin-right:8px;font-variant-numeric:tabular-nums}
+.part{margin-top:56px}.part .c{border-top:3px solid var(--ac2);padding-top:18px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.part b{color:var(--ac);font-size:15px;font-weight:700}.part span{font-size:clamp(22px,2.8vw,32px);font-weight:800;letter-spacing:-.02em}
+section{padding:52px 0 36px}main>section:nth-of-type(even){background:var(--tint)}
+h2{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-items:center;font-size:clamp(25px,3vw,36px);line-height:1.15;margin:0 0 14px;letter-spacing:-.025em;font-weight:800}
+h2 .no{font-size:13px;font-weight:700;background:var(--ac);color:var(--on-ac);border-radius:999px;padding:3px 10px;font-variant-numeric:tabular-nums;letter-spacing:0}
 h3{font-size:18px;margin:0 0 6px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
 .lead{color:var(--muted);max-width:68ch;font-size:17px;margin:0 0 20px}
+p,li{color:var(--ink)}
 .g2,.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.g3,.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px}.card strong{color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}.card strong{color:var(--ac)}
 .sm,.small{font-size:13.5px;color:var(--muted)}
-.tw{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+.tw{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
 table{width:100%;border-collapse:collapse;min-width:560px}
 th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}tr:last-child td{border-bottom:0}
-th{background:var(--hd);font-size:13px;font-weight:700;color:var(--muted)}td:first-child{font-weight:700}
-.dk,.callout{background:var(--call);color:var(--call-ink);border-radius:6px;border-left:6px solid var(--ac2);padding:22px 24px;margin-top:16px}.dk p,.callout p{color:var(--call-mut);margin:4px 0}.dk b,.callout b{color:var(--call-ink)}.dk h3,.callout h3{color:var(--call-ink)}
+th{background:var(--hd);font-size:13px;font-weight:700;color:var(--muted)}td:first-child{font-weight:700}tbody tr:nth-child(even) td{background:var(--tint)}
+.dk,.callout{background:rgba(242,176,30,.13);color:var(--ink);border-radius:10px;border-left:5px solid var(--ac2);padding:20px 24px;margin-top:16px}.dk p,.callout p{color:var(--ink);margin:4px 0}.dk h3,.callout h3{color:var(--ink)}
 .ph,.phase{border-left:2px solid var(--line);padding:0 0 24px 26px;margin:0 0 0 6px;position:relative}
 .ph::before,.phase::before{content:"";position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--ac)}
 .ph .n,.phase .num{font-size:13px;font-weight:700;color:var(--ac)}
-.chk,.check{display:block;padding:11px 14px;background:var(--hd);border-radius:6px;margin:8px 0;font-size:14.5px;cursor:pointer}
+.gate{margin-top:10px;background:var(--hd);border-left:3px solid var(--ac2);border-radius:6px;padding:9px 14px;font-size:14.5px}.gate b{color:var(--ac);margin-right:6px}
+#concept .grid .card:first-child{border:2px solid var(--ac);background:linear-gradient(var(--tint),var(--tint)),var(--card)}
+.chk,.check{display:block;padding:11px 14px;background:var(--hd);border-radius:8px;margin:8px 0;font-size:14.5px;cursor:pointer}
 .chk input,.check input{margin-right:10px;accent-color:var(--ac);width:16px;height:16px;vertical-align:-3px}
 .calc{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
 label.f{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;margin:8px 0}
-label.f input{width:150px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);text-align:right;font:inherit;font-variant-numeric:tabular-nums}
+label.f input{width:150px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-align:right;font:inherit;font-variant-numeric:tabular-nums}
 .r{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;font-size:14.5px}.r b{font-variant-numeric:tabular-nums;text-align:right}.r b.ok{color:var(--ok)}.r b.bad{color:var(--bad)}
 #out .r:nth-child(5){font-size:19px;padding:14px 0;font-weight:700}
 .metric{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:11px 0;font-size:14.5px}
-.tag{display:inline-block;background:var(--hd);border-radius:3px;padding:3px 8px;font-size:12px;font-weight:600;margin:8px 4px 0 0}
+.tag{display:inline-block;background:var(--hd);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;margin:8px 4px 0 0}
 .timeline{display:grid;grid-template-columns:repeat(8,1fr);margin:28px 0;border-top:2px solid var(--ac)}
 .t{position:relative;padding:18px 10px 0 0;font-size:13px;line-height:1.5}.t::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--ac)}.t b{display:block;color:var(--ac);font-size:15px;margin-bottom:4px}
-.fill{border-bottom:1.5px dashed var(--ac);background:rgba(224,165,38,.2);padding:0 4px;border-radius:3px;cursor:text;outline:none}.fill:focus{background:rgba(224,165,38,.45)}
-footer{background:var(--dk);color:#a9b8b0;padding:32px 0;font-size:13.5px;margin-top:56px}
-.rs-old{margin-left:12px;padding:6px 14px;border-radius:6px;border:1px solid #ffffff55;background:transparent;color:#fff;cursor:pointer;font:inherit}
+.fill{border-bottom:1.5px dashed var(--ac2);background:rgba(242,176,30,.2);padding:0 4px;border-radius:3px;cursor:text;outline:none}.fill:focus{background:rgba(242,176,30,.42)}
+.rs{margin-left:8px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;font:inherit;font-size:13px}.rs:hover{color:var(--ink);border-color:var(--ac)}
 @media(max-width:850px){.hero{grid-template-columns:1fr}.phin{max-width:150px;justify-self:start}.g2,.grid2,.g3,.grid,.toc{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:repeat(4,1fr)}.calc{grid-template-columns:1fr}}
-@media(max-width:560px){.g2,.grid2,.g3,.grid,.toc{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.path{grid-template-columns:1fr 1fr;row-gap:18px}.path::before{display:none}.c{padding:0 16px}header{padding-top:40px}}
-
-main>section:nth-of-type(even){background:linear-gradient(var(--tint),var(--tint))}
-:root{--tint:rgba(31,107,79,.045)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--tint:rgba(95,195,151,.05)}}
-:root[data-theme="dark"]{--tint:rgba(95,195,151,.05)}
-section{padding:56px 0 40px}
-tbody tr:nth-child(even) td{background:var(--tint)}
-.gate{margin-top:10px;background:var(--hd);border-left:3px solid var(--ac2);border-radius:4px;padding:9px 14px;font-size:14.5px}.gate b{color:var(--ac);margin-right:6px}
-#concept .grid .card:first-child{border:2px solid var(--ac);background:linear-gradient(var(--tint),var(--tint)),var(--card)}
-.card h3{color:var(--ink)}
-.rs{margin-left:8px;padding:5px 12px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;font:inherit;font-size:13px}.rs:hover{color:var(--ink);border-color:var(--ac)}
-.toc a:hover{padding-left:6px;transition:padding .15s}
-@media(max-width:560px){.phin{display:none}header{padding-top:32px}h1{font-size:34px}header p{font-size:16px}.path{margin-top:28px;padding-bottom:28px}.part{margin-top:28px;padding:20px 0}section{padding:40px 0 24px}h2{grid-template-columns:1fr}h2 .no{font-size:.6em}}
+@media(max-width:560px){.g2,.grid2,.g3,.grid,.toc{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.path{grid-template-columns:1fr 1fr;row-gap:18px;margin-top:28px;padding-bottom:28px}.path::before{display:none}.c{padding:0 16px}.phin{display:none}header{padding-top:32px}h1{font-size:34px}header p{font-size:16px}.part{margin-top:36px}section{padding:40px 0 24px}h2{grid-template-columns:1fr}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 <header><div class="c hero"><div><h1>Từ 1 quán cà phê<br>đến thương hiệu Global.</h1><p>Lộ trình thực chiến để xây một coffee brand kiếm tiền, vận hành ổn định, nhân bản và mở rộng. Có đủ tư duy, khách hàng, thương hiệu, tài chính và vận hành.</p><div class="warn">⚠ Mọi con số trong trang là <b>giả định minh họa</b>. Bấm vào các ô <b>gạch chân nét đứt</b> để điền số liệu thật (tự lưu trên trình duyệt này), rồi mới ra quyết định.</div></div><svg class="phin" viewBox="0 0 200 232" aria-hidden="true"><rect x="88" y="6" width="24" height="9" rx="4" fill="#cfd6d3"/><path d="M68 18H132L127 32H73Z" fill="#cfd6d3"/><path d="M62 32H138L133 72H67Z" fill="#aab4b0"/><rect x="48" y="72" width="104" height="9" rx="3" fill="#cfd6d3"/><circle class="drop" cx="100" cy="88" r="4.5" fill="#3b2314"/><g transform="translate(0,-40)"><path d="M62 150H138L130 244Q100 254 70 244Z" fill="#ffffff22" stroke="#e9f2ec" stroke-width="3"/><path d="M68 196H132L130 218H70Z" fill="#4a2c1a"/><path d="M70 218H130L129 242Q100 251 71 242Z" fill="#f1e3c1"/></g></svg></div><div class="c"><ol class="path"><li><b>0 → 1</b><span>Kiểm chứng concept</span></li><li><b>1 → 3</b><span>Chứng minh lặp lại được</span></li><li><b>3 → 20+</b><span>Xây chuỗi</span></li><li><b>Global</b><span>Xuất khẩu hệ thống thương hiệu</span></li></ol></div></header>
-<nav><div class="c"><a href="#toc">Mục lục</a><a href="#pa">Chiến lược</a><a href="#pb">Vốn &amp; tài chính</a><a href="#pc">Lộ trình &amp; vận hành</a><a href="#pd">Tăng trưởng &amp; rủi ro</a><a href="#pe">Mở rộng</a></div></nav>
+<nav><div class="c"><a href="#toc">Mục lục</a><a href="#pa">Chiến lược</a><a href="#pb">Vốn &amp; tài chính</a><a href="#pc">Lộ trình &amp; vận hành</a><a href="#pd">Tăng trưởng &amp; rủi ro</a><a href="#pe">Mở rộng</a><button id="th" class="th" type="button" aria-label="Đổi giao diện sáng/tối" title="Đổi sáng/tối"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></div></nav>
 <main>
 <section id="toc"><div class="c"><h2><span>Mục lục</span></h2><p class="lead" style="margin-bottom:6px">Chọn một mục để nhảy tới. Dữ liệu bạn điền được lưu trên trình duyệt này. <button id="rs" type="button" class="rs">Xóa dữ liệu đã điền</button></p><div class="toc"><a href="#strategy"><span>01</span>Tư duy nền tảng</a><a href="#concept"><span>02</span>Tìm concept trước khi tìm mặt bằng</a><a href="#kt"><span>03</span>Khác biệt phải kiểm chứng được</a><a href="#product"><span>04</span>Product Strategy</a><a href="#sp"><span>05</span>Sản phẩm</a><a href="#vq"><span>06</span>Founder, vốn &amp; pháp lý</a><a href="#unit"><span>07</span>Unit Economics</a><a href="#tc"><span>08</span>Mô hình tài chính 1 cửa hàng</a><a href="#gate"><span>09</span>Ngưỡng quyết định bằng con số</a><a href="#roadmap"><span>10</span>Roadmap 8 giai đoạn</a><a href="#operations"><span>11</span>Operating System</a><a href="#dd"><span>12</span>Chọn địa điểm bằng thang điểm, không bằng cảm giác</a><a href="#ns"><span>13</span>Tổ chức, ca làm &amp; đào tạo</a><a href="#vh"><span>14</span>Nhịp vận hành trong ngày</a><a href="#tk2"><span>15</span>Mua hàng &amp; tồn kho</a><a href="#cl"><span>16</span>Chất lượng &amp; xử lý khách hàng</a><a href="#tm"><span>17</span>Tiền mặt, số liệu &amp; quyền quyết định</a><a href="#growth"><span>18</span>Marketing</a><a href="#mk"><span>19</span>Marketing có ngân sách &amp; chỉ số</a><a href="#ci"><span>20</span>Continuous Improvement System</a><a href="#risk"><span>21</span>Risk Management</a><a href="#scale"><span>22</span>Điều kiện để mở cửa hàng tiếp theo</a><a href="#kh"><span>23</span>Trước khai trương</a><a href="#global"><span>24</span>Globalization Playbook</a><a href="#dashboard"><span>25</span>Founder Dashboard hàng tuần</a><a href="#d13"><span>26</span>Việc cần làm ngay trong 30 ngày</a><a href="#d30"><span>27</span>Checklist &amp; quyết định Đi / Sửa / Dừng cuối tháng 1</a></div></div></section>
 <div class="part" id="pa"><div class="c"><b>Phần A</b><span>Chiến lược, khách hàng và sản phẩm</span></div></div>
@@ -701,6 +692,11 @@ document.getElementById('rs').addEventListener('click',function(){
 (function(){var L=[].slice.call(document.querySelectorAll('nav a')),T=L.map(function(a){return document.querySelector(a.getAttribute('href'))}),q=0;
 function u(){q=0;var k=0;T.forEach(function(e,i){if(e&&e.getBoundingClientRect().top<=120)k=i});L.forEach(function(a,i){a.classList.toggle('on',i===k);if(i===k&&a.scrollIntoView&&a.parentNode.scrollWidth>a.parentNode.clientWidth)a.parentNode.scrollLeft=a.offsetLeft-40})}
 addEventListener('scroll',function(){if(!q){q=1;requestAnimationFrame(u)}},{passive:true});u()})();
+</script>
+<script>
+(function(){var r=document.documentElement,K='cb_theme';
+try{var t=localStorage.getItem(K);if(t==='light'||t==='dark')r.setAttribute('data-theme',t)}catch(e){}
+document.getElementById('th').addEventListener('click',function(){var d=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'),n=d==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}})})();
 </script>
 </body>
 </html>
