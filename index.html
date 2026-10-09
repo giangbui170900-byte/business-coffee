@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coffee Business — Roadmap đầy đủ + mô hình khả thi</title>
+<style>
+:root{--hero:#1f6b4f;--hero-ink:#fff;--hero-mut:#d6e8dc;--call:#fbefc9;--call-ink:#16211c;--call-mut:#4d4a39;--part:#e0a526;--part-ink:#16211c;--part-lab:#14442f;--bg:#f5f7f2;--card:#ffffff;--ink:#16211c;--muted:#5a6a62;--line:#d3dad4;--ac:#1f6b4f;--ac2:#e0a526;--hd:#e3e9e3;--ok:#1f6b4f;--bad:#b5442e;--dk:#14221c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1713;--card:#16211b;--ink:#e8efe9;--muted:#93a39a;--line:#2a3a31;--ac:#5fc397;--ac2:#eab94a;--hd:#1d2b24;--ok:#5fc397;--bad:#ee8a73;--dk:#0a110e;--hero:#0a110e;--hero-ink:#f2f5f2;--hero-mut:#c5d1ca;--call:#0a110e;--call-ink:#fff;--call-mut:#c5d1ca;--part:#0a110e;--part-ink:#fff;--part-lab:#eab94a}}
+:root[data-theme="dark"]{--bg:#0f1713;--card:#16211b;--ink:#e8efe9;--muted:#93a39a;--line:#2a3a31;--ac:#5fc397;--ac2:#eab94a;--hd:#1d2b24;--ok:#5fc397;--bad:#ee8a73;--dk:#0a110e;--hero:#0a110e;--hero-ink:#f2f5f2;--hero-mut:#c5d1ca;--call:#0a110e;--call-ink:#fff;--call-mut:#c5d1ca;--part:#0a110e;--part-ink:#fff;--part-lab:#eab94a}
+*{box-sizing:border-box}html{scroll-padding-top:64px;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.c{max-width:1120px;margin:auto;padding:0 24px}
+p{margin:0 0 10px}.card p:last-child{margin-bottom:0}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+header{background:var(--hero);color:var(--hero-ink);padding:64px 0 0}
+.hero{display:grid;grid-template-columns:1.5fr .7fr;gap:32px;align-items:center}
+h1{font-size:clamp(34px,5.4vw,66px);line-height:1.04;margin:0 0 20px;letter-spacing:-.03em;font-weight:800}
+header p{max-width:56ch;color:var(--hero-mut);font-size:18px}
+.warn{background:#f6e7b8;color:#4a3a0c;border-radius:6px;padding:12px 16px;font-size:14px;margin-top:22px;max-width:60ch}
+.phin{width:100%;max-width:230px;justify-self:center}
+.drop{animation:drip 2.6s cubic-bezier(.5,0,.9,.6) infinite}
+@keyframes drip{0%{transform:translateY(0);opacity:0}12%{opacity:1}80%{transform:translateY(66px);opacity:1}100%{transform:translateY(72px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.drop{animation:none;opacity:1}}
+.path{list-style:none;margin:44px 0 0;padding:0 0 36px;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.path::before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:#ffffff30}
+.path li{position:relative;padding:28px 12px 0 0}
+.path li::before{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--ac2)}
+.path li:last-child::before{background:#fff}
+.path b{display:block;font-size:22px;font-weight:700}.path span{font-size:13px;color:var(--hero-mut)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--line);z-index:10}
+nav .c{max-width:none;display:flex;gap:4px;overflow-x:auto;padding:0 12px}
+nav a{flex:1 1 auto;text-align:center;white-space:nowrap;color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;padding:14px 14px 11px;border-bottom:3px solid transparent}
+nav a:hover{color:var(--ink)}nav a.on{color:var(--ink);border-bottom-color:var(--ac2)}
+.toc{display:grid;grid-template-columns:repeat(4,1fr);gap:0 28px;margin-top:14px}
+.toc a{font-size:14.5px;color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--line)}.toc a:hover{color:var(--ac)}.toc a span{color:var(--muted);margin-right:8px;font-variant-numeric:tabular-nums}
+.part{background:var(--part);color:var(--part-ink);padding:28px 0;margin-top:40px}
+.part .c{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}.part b{color:var(--part-lab);font-size:15px;font-weight:700}.part span{font-size:clamp(20px,2.4vw,28px);font-weight:700;letter-spacing:-.01em}
+section{padding:52px 0 8px}
+h2{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:baseline;font-size:clamp(25px,3vw,36px);line-height:1.15;margin:0 0 12px;letter-spacing:-.025em;font-weight:800}
+h2 .no{font-size:.55em;color:var(--ac);font-weight:700;font-variant-numeric:tabular-nums}
+h3{font-size:18px;margin:0 0 6px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.lead{color:var(--muted);max-width:68ch;font-size:17px;margin:0 0 20px}
+.g2,.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.g3,.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px}.card strong{color:var(--ac)}
+.sm,.small{font-size:13.5px;color:var(--muted)}
+.tw{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}tr:last-child td{border-bottom:0}
+th{background:var(--hd);font-size:13px;font-weight:700;color:var(--muted)}td:first-child{font-weight:700}
+.dk,.callout{background:var(--call);color:var(--call-ink);border-radius:6px;border-left:6px solid var(--ac2);padding:22px 24px;margin-top:16px}.dk p,.callout p{color:var(--call-mut);margin:4px 0}.dk b,.callout b{color:var(--call-ink)}.dk h3,.callout h3{color:var(--call-ink)}
+.ph,.phase{border-left:2px solid var(--line);padding:0 0 24px 26px;margin:0 0 0 6px;position:relative}
+.ph::before,.phase::before{content:"";position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--ac)}
+.ph .n,.phase .num{font-size:13px;font-weight:700;color:var(--ac)}
+.chk,.check{display:block;padding:11px 14px;background:var(--hd);border-radius:6px;margin:8px 0;font-size:14.5px;cursor:pointer}
+.chk input,.check input{margin-right:10px;accent-color:var(--ac);width:16px;height:16px;vertical-align:-3px}
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
+label.f{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;margin:8px 0}
+label.f input{width:150px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);text-align:right;font:inherit;font-variant-numeric:tabular-nums}
+.r{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;font-size:14.5px}.r b{font-variant-numeric:tabular-nums;text-align:right}.r b.ok{color:var(--ok)}.r b.bad{color:var(--bad)}
+#out .r:nth-child(5){font-size:19px;padding:14px 0;font-weight:700}
+.metric{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:11px 0;font-size:14.5px}
+.tag{display:inline-block;background:var(--hd);border-radius:3px;padding:3px 8px;font-size:12px;font-weight:600;margin:8px 4px 0 0}
+.timeline{display:grid;grid-template-columns:repeat(8,1fr);margin:28px 0;border-top:2px solid var(--ac)}
+.t{position:relative;padding:18px 10px 0 0;font-size:13px;line-height:1.5}.t::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--ac)}.t b{display:block;color:var(--ac);font-size:15px;margin-bottom:4px}
+.fill{border-bottom:1.5px dashed var(--ac);background:rgba(224,165,38,.2);padding:0 4px;border-radius:3px;cursor:text;outline:none}.fill:focus{background:rgba(224,165,38,.45)}
+footer{background:var(--dk);color:#a9b8b0;padding:32px 0;font-size:13.5px;margin-top:56px}
+.rs-old{margin-left:12px;padding:6px 14px;border-radius:6px;border:1px solid #ffffff55;background:transparent;color:#fff;cursor:pointer;font:inherit}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.phin{max-width:150px;justify-self:start}.g2,.grid2,.g3,.grid,.toc{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:repeat(4,1fr)}.calc{grid-template-columns:1fr}}
+@media(max-width:560px){.g2,.grid2,.g3,.grid,.toc{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.path{grid-template-columns:1fr 1fr;row-gap:18px}.path::before{display:none}.c{padding:0 16px}header{padding-top:40px}}
+
+main>section:nth-of-type(even){background:linear-gradient(var(--tint),var(--tint))}
+:root{--tint:rgba(31,107,79,.045)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--tint:rgba(95,195,151,.05)}}
+:root[data-theme="dark"]{--tint:rgba(95,195,151,.05)}
+section{padding:56px 0 40px}
+tbody tr:nth-child(even) td{background:var(--tint)}
+.gate{margin-top:10px;background:var(--hd);border-left:3px solid var(--ac2);border-radius:4px;padding:9px 14px;font-size:14.5px}.gate b{color:var(--ac);margin-right:6px}
+#concept .grid .card:first-child{border:2px solid var(--ac);background:linear-gradient(var(--tint),var(--tint)),var(--card)}
+.card h3{color:var(--ink)}
+.rs{margin-left:8px;padding:5px 12px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;font:inherit;font-size:13px}.rs:hover{color:var(--ink);border-color:var(--ac)}
+.toc a:hover{padding-left:6px;transition:padding .15s}
+@media(max-width:560px){.phin{display:none}header{padding-top:32px}h1{font-size:34px}header p{font-size:16px}.path{margin-top:28px;padding-bottom:28px}.part{margin-top:28px;padding:20px 0}section{padding:40px 0 24px}h2{grid-template-columns:1fr}h2 .no{font-size:.6em}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header><div class="c hero"><div><h1>Từ 1 quán cà phê<br>đến thương hiệu Global.</h1><p>Lộ trình thực chiến để xây một coffee brand kiếm tiền, vận hành ổn định, nhân bản và mở rộng. Có đủ tư duy, khách hàng, thương hiệu, tài chính và vận hành.</p><div class="warn">⚠ Mọi con số trong trang là <b>giả định minh họa</b>. Bấm vào các ô <b>gạch chân nét đứt</b> để điền số liệu thật (tự lưu trên trình duyệt này), rồi mới ra quyết định.</div></div><svg class="phin" viewBox="0 0 200 232" aria-hidden="true"><rect x="88" y="6" width="24" height="9" rx="4" fill="#cfd6d3"/><path d="M68 18H132L127 32H73Z" fill="#cfd6d3"/><path d="M62 32H138L133 72H67Z" fill="#aab4b0"/><rect x="48" y="72" width="104" height="9" rx="3" fill="#cfd6d3"/><circle class="drop" cx="100" cy="88" r="4.5" fill="#3b2314"/><g transform="translate(0,-40)"><path d="M62 150H138L130 244Q100 254 70 244Z" fill="#ffffff22" stroke="#e9f2ec" stroke-width="3"/><path d="M68 196H132L130 218H70Z" fill="#4a2c1a"/><path d="M70 218H130L129 242Q100 251 71 242Z" fill="#f1e3c1"/></g></svg></div><div class="c"><ol class="path"><li><b>0 → 1</b><span>Kiểm chứng concept</span></li><li><b>1 → 3</b><span>Chứng minh lặp lại được</span></li><li><b>3 → 20+</b><span>Xây chuỗi</span></li><li><b>Global</b><span>Xuất khẩu hệ thống thương hiệu</span></li></ol></div></header>
+<nav><div class="c"><a href="#toc">Mục lục</a><a href="#pa">Chiến lược</a><a href="#pb">Vốn &amp; tài chính</a><a href="#pc">Lộ trình &amp; vận hành</a><a href="#pd">Tăng trưởng &amp; rủi ro</a><a href="#pe">Mở rộng</a></div></nav>
+<main>
+<section id="toc"><div class="c"><h2><span>Mục lục</span></h2><p class="lead" style="margin-bottom:6px">Chọn một mục để nhảy tới. Dữ liệu bạn điền được lưu trên trình duyệt này. <button id="rs" type="button" class="rs">Xóa dữ liệu đã điền</button></p><div class="toc"><a href="#strategy"><span>01</span>Tư duy nền tảng</a><a href="#concept"><span>02</span>Tìm concept trước khi tìm mặt bằng</a><a href="#kt"><span>03</span>Khác biệt phải kiểm chứng được</a><a href="#product"><span>04</span>Product Strategy</a><a href="#sp"><span>05</span>Sản phẩm</a><a href="#vq"><span>06</span>Founder, vốn &amp; pháp lý</a><a href="#unit"><span>07</span>Unit Economics</a><a href="#tc"><span>08</span>Mô hình tài chính 1 cửa hàng</a><a href="#gate"><span>09</span>Ngưỡng quyết định bằng con số</a><a href="#roadmap"><span>10</span>Roadmap 8 giai đoạn</a><a href="#operations"><span>11</span>Operating System</a><a href="#dd"><span>12</span>Chọn địa điểm bằng thang điểm, không bằng cảm giác</a><a href="#ns"><span>13</span>Tổ chức, ca làm &amp; đào tạo</a><a href="#vh"><span>14</span>Nhịp vận hành trong ngày</a><a href="#tk2"><span>15</span>Mua hàng &amp; tồn kho</a><a href="#cl"><span>16</span>Chất lượng &amp; xử lý khách hàng</a><a href="#tm"><span>17</span>Tiền mặt, số liệu &amp; quyền quyết định</a><a href="#growth"><span>18</span>Marketing</a><a href="#mk"><span>19</span>Marketing có ngân sách &amp; chỉ số</a><a href="#ci"><span>20</span>Continuous Improvement System</a><a href="#risk"><span>21</span>Risk Management</a><a href="#scale"><span>22</span>Điều kiện để mở cửa hàng tiếp theo</a><a href="#kh"><span>23</span>Trước khai trương</a><a href="#global"><span>24</span>Globalization Playbook</a><a href="#dashboard"><span>25</span>Founder Dashboard hàng tuần</a><a href="#d13"><span>26</span>Việc cần làm ngay trong 30 ngày</a><a href="#d30"><span>27</span>Checklist &amp; quyết định Đi / Sửa / Dừng cuối tháng 1</a></div></div></section>
+<div class="part" id="pa"><div class="c"><b>Phần A</b><span>Chiến lược, khách hàng và sản phẩm</span></div></div>
+<section id="strategy">
+<div class="c">
+<h2><span class="no">01</span><span>Tư duy nền tảng</span></h2>
+<p class="lead">Mục tiêu không phải “mở được nhiều quán”. Mục tiêu là tạo ra một <b>hệ thống có thể lặp lại</b>.</p>
+<div class="grid">
+<div class="card"><h3>Product</h3><p>Tạo 1–3 món signature đủ khác biệt để khách nhớ và có lý do quay lại.</p><span class="tag">Taste</span><span class="tag">Consistency</span><span class="tag">Signature</span></div>
+<div class="card"><h3>Brand</h3><p>Biến quán thành một identity: tên, visual, câu chuyện, không gian và trải nghiệm nhất quán.</p><span class="tag">Identity</span><span class="tag">Community</span></div>
+<div class="card"><h3>System</h3><p>Chuẩn hóa công thức, định lượng, mua hàng, đào tạo, POS, tồn kho và kiểm soát chất lượng.</p><span class="tag">SOP</span><span class="tag">Data</span></div>
+</div>
+<div class="callout" style="margin-top:18px">
+<h3>Nguyên tắc sống còn</h3>
+<p><b>Đừng mở cửa hàng số 2 để cứu cửa hàng số 1.</b> Chỉ mở khi cửa hàng đầu tiên đã chứng minh được nhu cầu, economics và khả năng vận hành.</p>
+</div>
+</div>
+</section>
+
+<section id="concept">
+<div class="c">
+<h2><span class="no">02</span><span>Tìm concept trước khi tìm mặt bằng</span></h2>
+<p class="lead">Không nên bắt đầu bằng câu hỏi “mở quán ở đâu?”. Hãy bắt đầu bằng “khách nào sẽ chọn mình thay vì 5 quán gần đó?”. Dựa trên các tín hiệu thị trường gần đây, người dùng vẫn rất nhạy về <b>taste, value-for-money, location và consistency</b>; đồng thời nhóm trẻ quan tâm mạnh đến trải nghiệm, digital và brand image.</p>
+
+<div class="grid">
+<div class="card">
+<h3>A — Vietnamese Coffee, Reimagined ⭐</h3>
+<p><b>Khuyến nghị ưu tiên test.</b> Lấy cà phê Việt làm DNA, nhưng biến trải nghiệm thành hiện đại, dễ hiểu với khách quốc tế.</p>
+<p class="small">Positioning: “Vietnamese coffee culture, redesigned for modern life.”</p>
+<span class="tag">Vietnamese DNA</span><span class="tag">Scalable</span><span class="tag">Global-ready</span>
+</div>
+<div class="card">
+<h3>B — Coffee + Community</h3>
+<p>Quán dành cho work/study/community: cà phê là sản phẩm lõi, cộng đồng là lý do quay lại.</p>
+<p class="small">Mạnh về loyalty nhưng cần kiểm soát diện tích và thời gian khách ngồi.</p>
+<span class="tag">Community</span><span class="tag">Work-friendly</span>
+</div>
+<div class="card">
+<h3>C — Vietnamese Specialty Lab</h3>
+<p>Đẩy mạnh Robusta/Arabica, origin, brewing và education. Premium hơn, nhưng khó scale đại trà nếu sản phẩm quá phức tạp.</p>
+<span class="tag">Specialty</span><span class="tag">Education</span>
+</div>
+</div>
+
+<div class="card" style="margin-top:18px">
+<h3>→ Lựa chọn chiến lược đề xuất</h3>
+<p><b>A + một phần B.</b> Không xây một specialty café quá hẹp. Xây một <b>modern Vietnamese coffee brand</b> có sản phẩm dễ uống, giá dễ tiếp cận, không gian hiện đại và câu chuyện Việt Nam đủ mạnh để sau này xuất khẩu.</p>
+<p>Đây là hypothesis cần test, không phải kết luận “đã thành công”. Thị trường Việt Nam đang cạnh tranh cao, vì vậy differentiation phải được kiểm chứng bằng hành vi mua và repeat rate chứ không chỉ bằng ý tưởng đẹp.</p>
+</div>
+
+<div class="card" style="margin-top:18px">
+<h3>Brand DNA bản nháp</h3>
+<div class="metric"><span>Core promise</span><b>Vietnamese coffee, made modern.</b></div>
+<div class="metric"><span>Personality</span><b>Warm · Smart · Modern · Authentic</b></div>
+<div class="metric"><span>Customer</span><b>18–35 urban consumers + young professionals</b></div>
+<div class="metric"><span>Price philosophy</span><b>Accessible premium, not luxury</b></div>
+<div class="metric"><span>Expansion logic</span><b>Small footprint → repeatable → multi-city → global</b></div>
+</div>
+</div>
+</section>
+
+<section id="kt"><div class="c">
+<h2><span class="no">03</span><span>Khác biệt phải kiểm chứng được</span></h2>
+<p class="lead">“Vietnamese coffee, made modern” là hướng chung, nhiều quán cùng đứng đó. Bản mới yêu cầu <b>1 câu khác biệt + 1 lợi thế khó sao chép</b>.</p>
+<div class="card"><h3>Công thức định vị</h3>
+<p>Dành cho <b>[nhóm khách cụ thể]</b> cần <b>[tình huống/occasion]</b>, chúng tôi cung cấp <b>[lợi ích chính]</b> khác với <b>[đối thủ gần nhất]</b> vì <b>[lợi thế khó copy]</b>.</p>
+<p class="sm">Lợi thế khó copy có thể là: nguồn hạt/nhà rang riêng, quy trình pha tốc độ + ổn định, địa điểm đặc thù, trải nghiệm/cộng đồng, câu chuyện thật của founder. Menu “độc lạ” đơn thuần thường bị bắt chước trong vài tuần.</p></div>
+<div class="tw"><table><thead><tr><th>Đối thủ trong bán kính 1–2 km</th><th>Giá ly chủ lực</th><th>Giờ đông khách</th><th>Điểm mạnh</th><th>Điểm yếu</th><th>Mình hơn ở đâu?</th></tr></thead>
+<tbody><tr><td>[Quán 1]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr><tr><td>[Quán 2]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr><tr><td>[Quán 3]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr><tr><td>[Quán 4]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr><tr><td>[Quán 5]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr></tbody></table></div>
+<p class="sm">Nên tự đến từng quán, đếm số khách theo khung giờ, ghi lại món bán chạy. Dữ liệu tự quan sát đáng tin hơn bài viết thị trường.</p>
+</div></section>
+
+<section id="product">
+<div class="c">
+<h2><span class="no">04</span><span>Product Strategy: đừng mở bằng menu 40 món</span></h2>
+<p class="lead">Mục tiêu của Phase 1 là tìm ra <b>1 hero product + 2 supporting signatures + 3–5 daily drivers</b>. Sau đó mới mở rộng menu.</p>
+
+<div class="grid2">
+<div class="card">
+<h3>Hero Product — “Phin Cloud”</h3>
+<p>Một phiên bản cà phê phin hiện đại: nền cà phê Việt đậm, lớp texture/foam đặc trưng và presentation có thể nhận diện ngay.</p>
+<p><b>Test:</b> vị nguyên bản / ít ngọt / seasonal.</p>
+<p class="small">Tên chỉ là working name. Trước khi dùng thương mại phải kiểm tra trademark.</p>
+</div>
+<div class="card">
+<h3>Signature #2 — “Vietnamese Tonic”</h3>
+<p>Coffee + sparkling/citrus profile để tạo một dòng cold beverage nhẹ, khác với menu cà phê sữa truyền thống.</p>
+<p><b>Test:</b> citrus / tropical / zero-sugar option.</p>
+</div>
+<div class="card">
+<h3>Signature #3 — “Coconut Phin”</h3>
+<p>Khai thác coconut như một flavor dễ liên tưởng tới Việt Nam, nhưng giữ công thức đơn giản để barista mới có thể làm ổn định.</p>
+</div>
+<div class="card">
+<h3>Daily Drivers</h3>
+<p>Cà phê đen, cà phê sữa, latte, americano/cold coffee và 1–2 non-coffee. Những món này giúp doanh thu không phụ thuộc hero product.</p>
+</div>
+</div>
+
+<div class="callout" style="margin-top:18px">
+<h3>Product Kill Rule</h3>
+<p>Mỗi món mới phải có hypothesis: <b>khách nào mua → vì sao mua → giá nào → cost bao nhiêu → có repeat không</b>. Không đạt ngưỡng sau thời gian test thì <b>kill, reformulate hoặc seasonalize</b>, không giữ chỉ vì founder thích.</p>
+</div>
+</div>
+</section>
+
+<section id="sp"><div class="c">
+<h2><span class="no">05</span><span>Sản phẩm: test trước, đặt tên sau</span></h2>
+<p class="lead">“Phin Cloud”, “Vietnamese Tonic”, “Coconut Phin” chỉ là <b>giả thuyết</b>. Chỉ giữ món nào qua được bảng chấm dưới đây. Không dựa vào 1 món hero duy nhất: luôn có 3–5 món nền (cà phê đen, sữa, latte, cold coffee, 1–2 non-coffee) để doanh thu không đổ theo trend.</p>
+<div class="tw"><table><thead><tr><th>Món thử</th><th>Điểm blind taste (1–5)</th><th>Giá khách chịu trả</th><th>Giá vốn/ly</th><th>Thời gian làm</th><th>Khách mua lại?</th><th>Quyết định</th></tr></thead>
+<tbody><tr><td>[Món 1]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ] giây</td><td>[ ]</td><td>Giữ / sửa / bỏ</td></tr><tr><td>[Món 2]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ] giây</td><td>[ ]</td><td>Giữ / sửa / bỏ</td></tr><tr><td>[Món 3]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ] giây</td><td>[ ]</td><td>Giữ / sửa / bỏ</td></tr></tbody></table></div>
+<div class="dk"><h3>Quy tắc giữ món</h3><p>Giữ khi: điểm taste ≥ 4/5 (mục tiêu đề xuất), giá vốn nằm trong ngưỡng COGS mục tiêu, thời gian làm đủ nhanh để phục vụ giờ cao điểm, và khách mua lại ở lần test thứ 2. Không đạt: sửa công thức, đưa thành món theo mùa, hoặc bỏ.</p></div>
+</div></section>
+
+<div class="part" id="pb"><div class="c"><b>Phần B</b><span>Vốn và tài chính</span></div></div>
+<section id="vq"><div class="c">
+<h2><span class="no">06</span><span>Founder, vốn &amp; pháp lý</span></h2>
+<p class="lead">Phần bản cũ còn thiếu. Điền xong mới biết mình có đủ “đường băng” để cất cánh không.</p>
+<div class="g2">
+<div class="card"><h3>Năng lực founder</h3>
+<label class="chk"><input type="checkbox" data-k="f1"> Đã từng làm/quản lý F&amp;B ít nhất 6–12 tháng, hoặc có đối tác vận hành đã làm</label>
+<label class="chk"><input type="checkbox" data-k="f2"> Có người phụ trách pha chế/chất lượng (không chỉ founder)</label>
+<label class="chk"><input type="checkbox" data-k="f3"> Có người đọc được P&amp;L và dòng tiền</label>
+<label class="chk"><input type="checkbox" data-k="f4"> Dành toàn thời gian ít nhất 12 tháng đầu</label></div>
+<div class="card"><h3>Vốn &amp; pháp lý</h3>
+<label class="chk"><input type="checkbox" data-k="v1"> Tổng vốn cần = đầu tư + dự phòng lỗ giai đoạn đầu (xem mục Tài chính)</label>
+<label class="chk"><input type="checkbox" data-k="v2"> Vốn riêng hoặc vốn vay đủ trang trải ≥ 6 tháng chi phí cố định</label>
+<label class="chk"><input type="checkbox" data-k="v3"> Hình thức kinh doanh &amp; giấy phép (ĐKKD, ATTP, PCCC, biển hiệu) đã tìm hiểu với cơ quan địa phương</label>
+<label class="chk"><input type="checkbox" data-k="v4"> Đã tra cứu nhãn hiệu tên thương hiệu và tên món hero</label></div>
+</div></div></section>
+
+<section id="unit">
+<div class="c">
+<h2><span class="no">07</span><span>Unit Economics: trước khi scale phải biết mỗi ly kiếm bao nhiêu</span></h2>
+<p class="lead">Không có một tỷ lệ “chuẩn” cho mọi mô hình. Hãy đặt target nội bộ rồi kiểm chứng bằng dữ liệu thực tế.</p>
+<div class="grid2">
+<div class="card">
+<h3>Công thức lõi</h3>
+<div class="metric"><span>Revenue / store</span><b>Orders × Average Ticket</b></div>
+<div class="metric"><span>Gross Profit</span><b>Revenue − COGS</b></div>
+<div class="metric"><span>Contribution</span><b>Gross Profit − variable costs</b></div>
+<div class="metric"><span>Store EBITDA</span><b>Contribution − fixed store costs</b></div>
+<div class="metric"><span>Payback</span><b>Initial investment / monthly cash contribution</b></div>
+</div>
+<div class="card">
+<h3>Dashboard cần theo dõi</h3>
+<div class="checklist">
+<label class="check"><input type="checkbox" data-k="o1"> Daily sales & transactions</label>
+<label class="check"><input type="checkbox" data-k="o2"> Average order value</label>
+<label class="check"><input type="checkbox" data-k="o3"> COGS theo SKU</label>
+<label class="check"><input type="checkbox" data-k="o4"> Labor cost / sales</label>
+<label class="check"><input type="checkbox" data-k="o5"> Rent / sales</label>
+<label class="check"><input type="checkbox" data-k="o6"> Repeat customer rate</label>
+<label class="check"><input type="checkbox" data-k="o7"> Waste & inventory variance</label>
+<label class="check"><input type="checkbox" data-k="o8"> Store-level cash flow</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="tc">
+<div class="c">
+<h2><span class="no">08</span><span>Mô hình tài chính 1 cửa hàng</span></h2>
+<p class="lead">Chỉnh các ô bên trái, kết quả cập nhật ngay. Giá trị mặc định chỉ để minh họa cách đọc. Đơn vị: VNĐ.</p>
+<div class="calc">
+<div class="card"><h3>Giả định (thay bằng số thật)</h3>
+<label class="f">Giá trung bình/đơn <input id="tk" type="number" value="45000"></label>
+<label class="f">Số đơn/ngày <input id="od" type="number" value="150"></label>
+<label class="f">Giá vốn (COGS) % <input id="cg" type="number" value="32"></label>
+<label class="f">Biến phí khác % (phí app, thanh toán, bao bì) <input id="vr" type="number" value="6"></label>
+<label class="f">Nhân sự/tháng <input id="lb" type="number" value="50000000"></label>
+<label class="f">Thuê mặt bằng/tháng <input id="rt" type="number" value="30000000"></label>
+<label class="f">Chi phí cố định khác/tháng <input id="ot" type="number" value="20000000"></label>
+<label class="f">Vốn đầu tư ban đầu (setup, thiết bị, cọc) <input id="cx" type="number" value="700000000"></label>
+<label class="f">Dự phòng (số tháng chi phí cố định) <input id="wc" type="number" value="4"></label>
+<label class="f">Kịch bản xấu: đơn giảm % <input id="dn" type="number" value="30"></label>
+</div>
+<div class="card"><h3>Kết quả</h3><div id="out"></div></div>
+</div>
+<div class="dk"><h3>Cách đọc</h3><p>Nếu <b>hòa vốn/ngày</b> sát với số đơn bạn tự tin đạt, hoặc <b>kịch bản xấu bị lỗ</b>, mô hình đang mong manh. Hãy giảm chi phí cố định, tăng giá trị đơn hoặc tăng vốn dự phòng trước khi ký thuê mặt bằng.</p></div>
+</div></section>
+
+<section id="gate"><div class="c">
+<h2><span class="no">09</span><span>Ngưỡng quyết định bằng con số</span></h2>
+<p class="lead">Các ngưỡng dưới đây là <b>mục tiêu đề xuất để bạn hiệu chỉnh</b>, không phải chuẩn ngành. Đặt cố định trước khi mở quán để không “nới” theo cảm xúc.</p>
+<div class="tw"><table><thead><tr><th>Chỉ số</th><th>Ngưỡng đi tiếp (đề xuất)</th><th>Ngưỡng dừng/xem lại</th></tr></thead><tbody>
+<tr><td>Test pop-up/pre-order</td><td>≥ [ ] đơn/ngày hoặc ≥ [ ] khách trả tiền trước</td><td>Dưới 50% mục tiêu sau 2 đợt test</td></tr>
+<tr><td>Hòa vốn vận hành</td><td>Đạt trong ≤ [6] tháng sau mở</td><td>Quá [9] tháng chưa hòa vốn</td></tr>
+<tr><td>COGS</td><td>≤ [ ]% doanh thu</td><td>Vượt mục tiêu 3 tháng liên tiếp</td></tr>
+<tr><td>Khách quay lại (30–60 ngày)</td><td>≥ [ ]% khách có thành viên/ID</td><td>Giảm liên tục 2 tháng</td></tr>
+<tr><td>EBITDA cửa hàng</td><td>Dương ≥ [ ] tháng liên tiếp</td><td>Âm sau tháng thứ [9]</td></tr>
+<tr><td>Hoàn vốn đầu tư</td><td>≤ [24–30] tháng theo dữ liệu thực</td><td>&gt; [36] tháng</td></tr>
+<tr><td>Dự phòng tiền mặt</td><td>Luôn ≥ [3] tháng chi phí cố định</td><td>&lt; 2 tháng: dừng mọi chi đầu tư</td></tr>
+<tr><td>Founder vắng mặt</td><td>Quán vận hành ổn ≥ [2] tuần không có founder</td><td>Chất lượng tụt khi founder vắng</td></tr></tbody></table></div>
+<div class="g2" style="margin-top:14px">
+<div class="card"><h3>🟢 Chỉ mở cửa hàng 2 khi</h3>
+<label class="chk"><input type="checkbox" data-k="g1"> Tất cả ngưỡng “đi tiếp” đạt liên tục ≥ [3] tháng</label>
+<label class="chk"><input type="checkbox" data-k="g2"> Có Store Manager đã được đào tạo bằng SOP</label>
+<label class="chk"><input type="checkbox" data-k="g3"> Vốn cho cửa hàng 2 không lấy từ dự phòng cửa hàng 1</label></div>
+<div class="card"><h3>🔴 Dừng và sửa khi</h3><p>Doanh thu tăng nhưng lỗ tăng; không biết COGS thật; founder phải đứng quầy mới chạy được; chất lượng phụ thuộc 1 barista; mở quán theo cảm tính.</p></div></div>
+</div></section>
+
+<div class="part" id="pc"><div class="c"><b>Phần C</b><span>Lộ trình và vận hành</span></div></div>
+<section id="roadmap">
+<div class="c">
+<h2><span class="no">10</span><span>Roadmap 8 giai đoạn</span></h2>
+<p class="lead">Thời gian là khung tham chiếu. Mốc chuyển phase phải dựa trên dữ liệu, không chỉ dựa vào số tháng.</p>
+<div class="timeline">
+<div class="t"><b>0–2M</b>Research<br>Concept<br>Menu</div>
+<div class="t"><b>2–4M</b>Launch<br>1st store<br>Feedback</div>
+<div class="t"><b>4–9M</b>PMF<br>Repeat<br>Unit economics</div>
+<div class="t"><b>9–18M</b>Store 2–3<br>Playbook<br>Team</div>
+<div class="t"><b>18–36M</b>5–10 stores<br>Supply chain<br>Data</div>
+<div class="t"><b>3–5Y</b>20–50<br>Franchise<br>Regional</div>
+<div class="t"><b>5–7Y</b>SEA<br>Master partner<br>Localization</div>
+<div class="t"><b>7Y+</b>Global<br>Brand platform<br>Products</div>
+</div>
+
+<div class="phase"><div class="num">PHASE 0 — DISCOVERY</div><h3>Chưa mở quán: chứng minh khách hàng trước</h3><p>Phỏng vấn 30–50 khách mục tiêu; khảo sát đối thủ; test 5–10 concept; test menu nhỏ bằng pop-up/pre-order; xác định “lý do tồn tại” của thương hiệu.</p><div class="gate"><b>Gate</b> Có nhóm khách cụ thể + problem/occasion rõ + concept được phản hồi tốt.</div></div>
+
+<div class="phase"><div class="num">PHASE 1 — 1 FLAGSHIP</div><h3>Mở một cửa hàng thật nhỏ nhưng đo lường thật kỹ</h3><p>Ưu tiên vị trí có đúng khách hàng, không nhất thiết phải là mặt bằng đắt nhất. Tập trung 8–15 SKU chủ lực, quy trình đơn giản, POS và data từ ngày đầu.</p><div class="gate"><b>Gate</b> Doanh thu ổn định, tỷ lệ khách quay lại tăng, gross margin đủ khỏe và không phụ thuộc founder đứng quầy mọi lúc.</div></div>
+
+<div class="phase"><div class="num">PHASE 2 — PRODUCT–MARKET FIT</div><h3>Biến khách thử thành khách trung thành</h3><p>Phân tích cohort, món bán chạy, giờ cao điểm, ticket size, repeat rate, CAC và contribution margin. Cắt món yếu thay vì cố giữ menu dài.</p><div class="gate"><b>Gate</b> Economics ổn định trong nhiều tháng + nhu cầu lặp lại + quy trình đã được ghi thành SOP.</div></div>
+
+<div class="phase"><div class="num">PHASE 3 — 2–3 STORES</div><h3>Kiểm tra khả năng nhân bản</h3><p>Mở cửa hàng 2 và 3 ở các micro-market khác nhau. Founder bắt đầu rút khỏi vận hành hằng ngày. Xây Store Manager, training và audit.</p><div class="gate"><b>Gate</b> Store mới đạt economics mục tiêu mà không cần “phép màu” từ founder.</div></div>
+
+<div class="phase"><div class="num">PHASE 4 — CHAIN</div><h3>5–20+ cửa hàng: xây bộ máy</h3><p>Central procurement, QA/QC, warehouse, demand planning, finance control, HR/training, area manager, BI dashboard. Chuyển từ “quán” sang “retail operation”.</p><div class="gate"><b>Gate</b> Có thể mở thêm cửa hàng mà chất lượng, tồn kho và trải nghiệm vẫn ổn định.</div></div>
+
+<div class="phase"><div class="num">PHASE 5 — CAPITAL & PARTNERS</div><h3>Chọn tốc độ tăng trưởng</h3><p>Chỉ huy động vốn khi vốn giúp tăng tốc một mô hình đã chứng minh. Có thể dùng vốn chủ, debt phù hợp hoặc strategic partner. Không fundraising chỉ để che lỗ vận hành.</p><div class="gate"><b>Gate</b> Use-of-funds rõ, payback logic rõ, governance rõ.</div></div>
+
+<div class="phase"><div class="num">PHASE 6 — REGIONAL</div><h3>Đông Nam Á trước khi nghĩ “toàn cầu”</h3><p>Chọn một thị trường có fit về khẩu vị, thu nhập, coffee culture và logistics. Thử bằng partner/JV hoặc flagship nhỏ trước khi xây mạng lưới lớn.</p><div class="gate"><b>Gate</b> Brand và menu có thể localize mà không mất DNA.</div></div>
+
+<div class="phase"><div class="num">PHASE 7 — GLOBAL</div><h3>Xuất khẩu hệ thống, không chỉ xuất khẩu cà phê</h3><p>Global brand architecture, trademark, franchise standards, training academy, supply chain, digital CRM, packaged products và đối tác địa phương.</p><div class="gate"><b>Gate</b> Có economics và operating model phù hợp từng thị trường.</div></div>
+</div>
+</section>
+
+<section id="operations">
+<div class="c">
+<h2><span class="no">11</span><span>Operating System</span></h2>
+<p class="lead">Chuỗi lớn lên nhờ hệ thống chứ không nhờ founder “giỏi quán cà phê”.</p>
+<div class="tw"><table>
+<thead><tr><th>Module</th><th>Phải chuẩn hóa</th><th>Khi scale</th></tr></thead>
+<tbody>
+<tr><td>Recipe</td><td>Gram/ml, thời gian, nhiệt độ, yield</td><td>Recipe master + QA audit</td></tr>
+<tr><td>Procurement</td><td>Nhà cung cấp, MOQ, lead time</td><td>Central purchasing + dual sourcing</td></tr>
+<tr><td>Inventory</td><td>Par level, FIFO/FEFO, waste</td><td>Demand forecasting + WMS</td></tr>
+<tr><td>People</td><td>JD, training, checklist</td><td>Academy + certification</td></tr>
+<tr><td>Store</td><td>Opening/closing, cash, cleaning</td><td>Area manager + audit score</td></tr>
+<tr><td>Customer</td><td>Complaint, loyalty, CRM</td><td>Central CRM + segmentation</td></tr>
+<tr><td>Data</td><td>POS + daily report</td><td>BI dashboard + alerts</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+
+<section id="dd"><div class="c">
+<h2><span class="no">12</span><span>Chọn địa điểm bằng thang điểm, không bằng cảm giác</span></h2>
+<p class="lead">Chấm tối thiểu 3 mặt bằng. Ngưỡng là đề xuất để bạn hiệu chỉnh.</p>
+<div class="tw"><table><thead><tr><th>Tiêu chí</th><th>Cách đo</th><th>Ngưỡng đạt</th></tr></thead><tbody>
+<tr><td>Lượng người qua lại</td><td>Tự đếm 3 khung giờ × 3 ngày (sáng, trưa, chiều, gồm 1 ngày cuối tuần)</td><td>≥ [ ] người/giờ, trong đó ≥ [ ]% đúng nhóm khách mục tiêu</td></tr>
+<tr><td>Tiền thuê / doanh thu dự kiến</td><td>Thuê tháng ÷ doanh thu ở kịch bản xấu</td><td>≤ [15–20]%</td></tr>
+<tr><td>Hợp đồng thuê</td><td>Đọc kỹ với người am hiểu</td><td>Thời hạn ≥ [3] năm, trần tăng giá, có thời gian ân hạn, điều khoản thoát rõ ràng</td></tr>
+<tr><td>Hiển thị &amp; tiếp cận</td><td>Biển hiệu, tầm nhìn, chỗ gửi xe, giao hàng</td><td>Thấy được từ [ ] m; có chỗ gửi xe hoặc đỗ nhanh</td></tr>
+<tr><td>Cạnh tranh</td><td>Số quán cùng phân khúc trong 500 m</td><td>Có lý do khách chọn mình (xem mục 02)</td></tr>
+<tr><td>Pháp lý mặt bằng</td><td>Hỏi chủ nhà/địa phương</td><td>Được phép kinh doanh F&amp;B, điện nước, thoát nước, PCCC, đủ điều kiện xin giấy phép</td></tr></tbody></table></div>
+</div></section>
+
+<section id="ns"><div class="c">
+<h2><span class="no">13</span><span>Tổ chức, ca làm &amp; đào tạo</span></h2>
+<div class="tw"><table><thead><tr><th>Vai trò</th><th>Số người (cửa hàng nhỏ)</th><th>Chịu trách nhiệm</th></tr></thead><tbody>
+<tr><td>Quản lý cửa hàng</td><td>1</td><td>Lịch ca, báo cáo ngày, tồn kho, xử lý sự cố; về sau thay founder</td></tr>
+<tr><td>Barista chính</td><td>1–2</td><td>Chất lượng ly, công thức, đào tạo tại chỗ</td></tr>
+<tr><td>Barista / thu ngân</td><td>[ ]</td><td>Pha chế, nhận order, thu tiền</td></tr>
+<tr><td>Part-time / hỗ trợ</td><td>[ ]</td><td>Giờ cao điểm, dọn dẹp, giao nhận</td></tr></tbody></table></div>
+<div class="g2" style="margin-top:14px">
+<div class="card"><h3>Quy tắc ca làm</h3><p>• Ít nhất 2 người biết pha đủ menu ở mỗi ca.<br>• Giờ cao điểm không để 1 người làm một mình.<br>• Có danh sách part-time dự phòng cho ca vắng.<br>• Lịch ca công bố trước [7] ngày.</p></div>
+<div class="card"><h3>Đào tạo 14 ngày</h3><p><b>Ngày 1–3:</b> quan sát, học SOP và an toàn thực phẩm.<br><b>Ngày 4–7:</b> thực hành có người kèm.<br><b>Ngày 8–14:</b> làm độc lập, chấm tay nghề bằng phiếu (đúng định lượng, thời gian, vị).<br>Đạt phiếu mới được xếp ca một mình.</p></div></div>
+</div></section>
+
+<section id="vh"><div class="c">
+<h2><span class="no">14</span><span>Nhịp vận hành trong ngày</span></h2>
+<p class="lead">Mỗi việc phải có người chịu trách nhiệm và bằng chứng đã làm (checklist/ảnh/chữ ký).</p>
+<div class="tw"><table><thead><tr><th>Thời điểm</th><th>Việc</th><th>Người chịu trách nhiệm</th><th>Bằng chứng</th></tr></thead><tbody>
+<tr><td>Trước mở cửa</td><td>Vệ sinh máy, hiệu chỉnh xay/pha (nếm thử), kiểm tra nhiệt độ tủ lạnh, đếm két đầu ca, bật POS</td><td>Ca mở</td><td>Checklist mở ca</td></tr>
+<tr><td>Trước giờ cao điểm</td><td>Chuẩn bị sẵn nguyên liệu bán thành phẩm, bố trí vị trí từng người</td><td>Barista chính</td><td>Bảng chuẩn bị</td></tr>
+<tr><td>Giờ cao điểm</td><td>Theo dõi thời gian ra món, nhắc nhau số đơn tồn, xử lý khiếu nại ngay tại chỗ</td><td>Quản lý/ca trưởng</td><td>Số đơn chậm ghi vào sổ</td></tr>
+<tr><td>Giữa ngày</td><td>Bổ sung hàng, kiểm tra nguyên liệu sắp hết, vệ sinh khu vực khách</td><td>Ca trưởng</td><td>Checklist giữa ca</td></tr>
+<tr><td>Đóng cửa</td><td>Vệ sinh, bảo quản nguyên liệu, đếm két (2 người), chốt POS, tắt thiết bị</td><td>Ca đóng</td><td>Checklist đóng ca + chữ ký</td></tr>
+<tr><td>Cuối ngày</td><td>Gửi báo cáo ngày (doanh thu, số đơn, hao hụt, sự cố, hàng cần đặt)</td><td>Quản lý</td><td>Báo cáo ngày</td></tr></tbody></table></div>
+<div class="card" style="margin-top:12px"><h3>Sổ bàn giao ca (bắt buộc)</h3><p class="sm">Ghi: hàng sắp hết · thiết bị lỗi · khiếu nại chưa xử lý xong · khách đặt trước · việc người ca sau cần làm. Không ghi thì xem như chưa bàn giao.</p></div>
+</div></section>
+
+<section id="tk2"><div class="c">
+<h2><span class="no">15</span><span>Mua hàng &amp; tồn kho</span></h2>
+<div class="g2">
+<div class="card"><h3>Quy trình</h3><p>1. Mức tồn tối thiểu = bán TB/ngày × (thời gian giao hàng + ngày an toàn).<br>2. Đặt hàng theo lịch cố định, không đặt khi hết mới gọi.<br>3. Nhận hàng: kiểm số lượng, hạn dùng, nhiệt độ; sai thì ghi và từ chối.<br>4. Dùng hàng hết hạn sớm trước (FEFO).<br>5. Kiểm kê hằng tuần, so với số bán trên POS.<br>6. Sổ hao hụt: ghi lý do mỗi lần đổ bỏ.</p></div>
+<div class="card"><h3>Đánh giá nhà cung cấp</h3><p>Chấm hằng tháng: giao đúng hạn, chất lượng ổn định, giá, xử lý sai sót. Nguyên liệu chính cần ít nhất 2 nguồn (đã thử mẫu).</p></div></div>
+<div class="tw"><table><thead><tr><th>Nhóm hàng</th><th>NCC 1 / NCC 2</th><th>Giao hàng (ngày)</th><th>Tồn tối thiểu</th><th>Chu kỳ đặt</th></tr></thead><tbody>
+<tr><td>Hạt/bột cà phê</td><td>[ ] / [ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr>
+<tr><td>Sữa, kem, nguyên liệu lạnh</td><td>[ ] / [ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr>
+<tr><td>Syrup, topping, nguyên liệu khô</td><td>[ ] / [ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr>
+<tr><td>Ly, nắp, ống hút, bao bì</td><td>[ ] / [ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr></tbody></table></div>
+</div></section>
+
+<section id="cl"><div class="c">
+<h2><span class="no">16</span><span>Chất lượng &amp; xử lý khách hàng</span></h2>
+<div class="g2">
+<div class="card"><h3>Thẻ công thức (mỗi món)</h3><p>Định lượng (g/ml), nhiệt độ, thời gian chiết/pha, ly và lượng đá, cách trình bày, ảnh chuẩn, giá vốn, thời gian làm tối đa. Cập nhật có ngày và người duyệt.</p><h3 style="margin-top:10px">Kiểm tra hằng ngày</h3><p>Nếm thử đầu ca, cân thử định lượng ngẫu nhiên, kiểm tra hạn dùng và vệ sinh. Quản lý chấm điểm 5 tiêu chí mỗi tuần.</p></div>
+<div class="card"><h3>Khi khách phàn nàn (5 bước)</h3><p>1. Lắng nghe, không cãi.<br>2. Xin lỗi.<br>3. Sửa ngay (làm lại, đổi món, hoàn tiền theo mức nhân viên được quyền tự quyết [ ]).<br>4. Ghi vào sổ khiếu nại.<br>5. Mỗi tuần xem lại và tìm nguyên nhân gốc.<br><span class="sm">Phản hồi đánh giá online trong vòng [24] giờ.</span></p><p class="sm">Sự cố an toàn thực phẩm: ngừng bán món liên quan, giữ mẫu, ghi lại, báo quản lý ngay.</p></div></div>
+</div></section>
+
+<section id="tm"><div class="c">
+<h2><span class="no">17</span><span>Tiền mặt, số liệu &amp; quyền quyết định</span></h2>
+<div class="g2">
+<div class="card"><h3>Kiểm soát tiền</h3><p>• Két đầu ca và cuối ca có 2 người xác nhận.<br>• Mỗi ngày đối soát: POS = tiền mặt + chuyển khoản + ví/app.<br>• Nộp ngân hàng theo lịch cố định.<br>• Chi phí phải có chứng từ; mức chi nhân viên tự duyệt: [ ].<br>• Lập dự báo dòng tiền 13 tuần, cập nhật hằng tuần.<br>• Nên có kế toán/dịch vụ kế toán theo dõi thuế và sổ sách.</p></div>
+<div class="card"><h3>Số liệu ai xem gì</h3><p><b>Ngày (quản lý):</b> doanh thu, số đơn, hao hụt, sự cố.<br><b>Tuần (founder):</b> giá trị đơn, khách quay lại, COGS, giờ công/doanh thu, tiền mặt còn bao nhiêu tuần.<br><b>Tháng (founder + kế toán):</b> P&amp;L thực tế so với mô hình, điều chỉnh giả định.</p></div></div>
+<div class="tw"><table><thead><tr><th>Loại quyết định</th><th>Ai quyết</th><th>Ai được hỏi ý kiến</th></tr></thead><tbody>
+<tr><td>Đổi menu, giá</td><td>Founder</td><td>Quản lý, barista chính, dữ liệu bán</td></tr>
+<tr><td>Đổi lịch ca, tuyển người</td><td>Quản lý</td><td>Founder</td></tr>
+<tr><td>Mua hàng thường xuyên</td><td>Quản lý</td><td>Theo mức tồn tối thiểu</td></tr>
+<tr><td>Chi lớn (vượt mức [ ])</td><td>Founder</td><td>Kế toán</td></tr>
+<tr><td>Sự cố nghiêm trọng (an toàn, truyền thông)</td><td>Founder</td><td>Quản lý; báo trong [1] giờ</td></tr></tbody></table></div>
+</div></section>
+
+<div class="part" id="pd"><div class="c"><b>Phần D</b><span>Tăng trưởng, rủi ro và mở rộng</span></div></div>
+<section id="growth">
+<div class="c">
+<h2><span class="no">18</span><span>Marketing: xây brand trước khi đốt tiền quảng cáo</span></h2>
+<div class="grid">
+<div class="card"><h3>Hero Product</h3><p>1 món signature có visual và câu chuyện đủ mạnh để khách tự chia sẻ.</p></div>
+<div class="card"><h3>Community</h3><p>Workshop, study community, creator collaboration, local events — biến khách thành thành viên.</p></div>
+<div class="card"><h3>Content Engine</h3><p>Short video, behind-the-scenes, founder story, coffee education, customer stories.</p></div>
+<div class="card"><h3>CRM</h3><p>Membership, loyalty, birthday, personalized offers. Đo retention thay vì chỉ đếm follower.</p></div>
+<div class="card"><h3>Location Marketing</h3><p>Google/Maps, local SEO, neighborhood partnerships và delivery presence.</p></div>
+<div class="card"><h3>Brand Assets</h3><p>Packaging, cups, uniforms, store design và tone of voice nhất quán.</p></div>
+</div>
+</div>
+</section>
+
+<section id="mk"><div class="c">
+<h2><span class="no">19</span><span>Marketing có ngân sách &amp; chỉ số</span></h2>
+<div class="g3">
+<div class="card"><h3>Chọn 2 kênh trước</h3><p>Ví dụ Google Maps + 1 kênh video ngắn hoặc cộng đồng quanh quán. Kênh thứ 3 chỉ thêm khi 2 kênh đầu có dữ liệu.</p></div>
+<div class="card"><h3>Ngân sách</h3><p>Đặt trần cố định mỗi tháng (đề xuất tham khảo: [3–5]% doanh thu, hiệu chỉnh theo thực tế). Giai đoạn mở quán có thể cao hơn, nhưng phải đặt trần.</p></div>
+<div class="card"><h3>Chỉ số</h3><p>Chi phí để có 1 khách mới (CAC), tỷ lệ khách quay lại, số đơn từ mỗi kênh. Không dùng số follower làm thước đo chính.</p></div>
+</div></div></section>
+
+<section id="ci">
+<div class="c">
+<h2><span class="no">20</span><span>Continuous Improvement System</span></h2>
+<p class="lead">Mỗi cửa hàng phải trở thành một “phòng thí nghiệm dữ liệu”. Mục tiêu không phải thay đổi liên tục, mà là <b>thay đổi có kiểm soát và đo được</b>.</p>
+<div class="grid">
+<div class="card"><h3>PDCA</h3><p><b>Plan → Do → Check → Act.</b> Mọi cải tiến lớn phải có baseline, thử nghiệm, kết quả và quyết định.</p></div>
+<div class="card"><h3>5 Whys</h3><p>Khi có lỗi, tìm nguyên nhân gốc thay vì chỉ xử lý triệu chứng.</p></div>
+<div class="card"><h3>Kaizen Board</h3><p>Mỗi tuần thu nhận đề xuất từ barista, store manager và khách hàng.</p></div>
+<div class="card"><h3>A/B Test</h3><p>Test menu, price, packaging, layout, promotion trên mẫu nhỏ trước khi rollout.</p></div>
+<div class="card"><h3>Monthly Review</h3><p>Chọn 3 vấn đề lớn nhất và chỉ tập trung giải quyết những vấn đề tạo impact cao.</p></div>
+<div class="card"><h3>SOP Versioning</h3><p>SOP phải có version, ngày cập nhật, người duyệt và lý do thay đổi.</p></div>
+</div>
+
+<div class="card" style="margin-top:18px">
+<h3>Improvement Loop hàng tuần</h3>
+<div class="checklist">
+<label class="check"><input type="checkbox" data-k="o9"> 1. Chọn 1 KPI đang lệch target</label>
+<label class="check"><input type="checkbox" data-k="o10"> 2. Xác định root cause</label>
+<label class="check"><input type="checkbox" data-k="o11"> 3. Đưa ra 1–2 countermeasures</label>
+<label class="check"><input type="checkbox" data-k="o12"> 4. Test ở một store/ca nhỏ</label>
+<label class="check"><input type="checkbox" data-k="o13"> 5. Đo trước và sau</label>
+<label class="check"><input type="checkbox" data-k="o14"> 6. Standardize nếu hiệu quả</label>
+<label class="check"><input type="checkbox" data-k="o15"> 7. Kill nếu không hiệu quả</label>
+</div>
+</div>
+
+<div class="callout" style="margin-top:18px">
+<h3>Golden Rule</h3>
+<p><b>Every problem becomes a process improvement. Every improvement becomes a new standard.</b></p>
+</div>
+</div>
+</section>
+
+<section id="risk">
+<div class="c">
+<h2><span class="no">21</span><span>Risk Management: xây hệ thống chống “gãy”</span></h2>
+<p class="lead">Một chuỗi F&B không chỉ cần tăng trưởng. Nó cần có khả năng <b>chịu shock</b> mà không phá hỏng cash flow, chất lượng và thương hiệu.</p>
+<div class="tw"><table>
+<thead><tr><th>Risk</th><th>Early warning</th><th>Mitigation</th><th>Contingency</th></tr></thead>
+<tbody>
+<tr><td>Demand thấp</td><td>Transactions/repeat giảm</td><td>Test location + product trước</td><td>Menu/location reset</td></tr>
+<tr><td>COGS tăng</td><td>Food/beverage cost vượt target</td><td>Dual suppliers + recipe control</td><td>Re-source / reprice / reformulate</td></tr>
+<tr><td>Thiếu nguyên liệu</td><td>Lead time tăng</td><td>Safety stock + second source</td><td>Temporary substitute SKU</td></tr>
+<tr><td>Food safety</td><td>Complaint / QC deviation</td><td>Traceability + hygiene audit</td><td>Stop-sale + incident protocol</td></tr>
+<tr><td>Nhân sự</td><td>Turnover / absenteeism</td><td>Training + backup staffing</td><td>Cross-trained pool</td></tr>
+<tr><td>Brand crisis</td><td>Complaint viral</td><td>Social listening + response SOP</td><td>Crisis team + transparent response</td></tr>
+<tr><td>Cash flow</td><td>Runway giảm nhanh</td><td>13-week cash forecast</td><td>Freeze capex + cost reset</td></tr>
+<tr><td>Technology</td><td>POS/Wi-Fi outage</td><td>Offline process + backup</td><td>Manual order/cash protocol</td></tr>
+<tr><td>Expansion</td><td>Store mới underperform</td><td>Expansion gate</td><td>Pause openings</td></tr>
+<tr><td>Global</td><td>Local demand mismatch</td><td>Country pilot</td><td>Exit/partner/localize</td></tr>
+</tbody>
+</table></div>
+
+<div class="card" style="margin-top:18px">
+<h3>Risk Score</h3>
+<p><b>Risk Score = Probability × Impact</b></p>
+<div class="metric"><span>1–4</span><b>Monitor</b></div>
+<div class="metric"><span>5–9</span><b>Mitigation required</b></div>
+<div class="metric"><span>10–16</span><b>Management priority</b></div>
+<div class="metric"><span>17–25</span><b>Critical — founder/executive action</b></div>
+<p class="small">Thang điểm là framework quản trị nội bộ; cần hiệu chỉnh theo thực tế doanh nghiệp.</p>
+</div>
+</div>
+</section>
+
+<section id="scale">
+<div class="c">
+<h2><span class="no">22</span><span>Điều kiện để mở cửa hàng tiếp theo</span></h2>
+<div class="grid2">
+<div class="card">
+<h3>GREEN LIGHT</h3>
+<ul>
+<li>Store 1 có economics ổn định.</li>
+<li>Khách quay lại và demand có tính lặp.</li>
+<li>SOP đã được viết và đào tạo được.</li>
+<li>Store Manager có thể vận hành.</li>
+<li>Founder không cần có mặt liên tục.</li>
+<li>Cash buffer đủ cho downside.</li>
+</ul>
+</div>
+<div class="card">
+<h3>RED LIGHT</h3>
+<ul>
+<li>Doanh thu tăng nhưng lỗ càng lớn.</li>
+<li>Founder phải đứng quán để mọi thứ chạy.</li>
+<li>Chất lượng phụ thuộc một barista.</li>
+<li>Không biết COGS thực tế.</li>
+<li>Inventory/waste không kiểm soát.</li>
+<li>Mở store mới bằng cảm tính.</li>
+</ul>
+</div>
+</div>
+<div class="callout" style="margin-top:18px"><h3>Chiến lược mở rộng đề xuất</h3><p><b>1 → 3:</b> tự sở hữu để học mô hình. <b>3 → 10:</b> tối ưu hệ thống. <b>10 → 20+:</b> cân nhắc franchise/JV chọn lọc. <b>20+ → Global:</b> ưu tiên strategic partners có năng lực local execution.</p></div>
+</div>
+</section>
+
+<section id="kh"><div class="c">
+<h2><span class="no">23</span><span>Trước khai trương</span></h2>
+<div class="g2"><div class="card">
+<label class="chk"><input type="checkbox" data-k="k1"> Giấy phép và điều kiện an toàn đã hoàn tất</label>
+<label class="chk"><input type="checkbox" data-k="k2"> Thiết bị đã lắp, chạy thử, có kế hoạch bảo trì và nhà sửa chữa</label>
+<label class="chk"><input type="checkbox" data-k="k3"> POS đã cài, nhập menu, giá, thử in hóa đơn và báo cáo</label>
+<label class="chk"><input type="checkbox" data-k="k4"> Nhà cung cấp, mức tồn và lịch đặt hàng đã chốt</label>
+<label class="chk"><input type="checkbox" data-k="k5"> Thẻ công thức và SOP đã in/dán tại quầy</label></div>
+<div class="card">
+<label class="chk"><input type="checkbox" data-k="k6"> Nhân viên đã qua đào tạo 14 ngày và chấm tay nghề</label>
+<label class="chk"><input type="checkbox" data-k="k7"> Chạy giả lập giờ cao điểm, đo thời gian ra món</label>
+<label class="chk"><input type="checkbox" data-k="k8"> Soft opening [2] tuần: giới hạn khách, thu phản hồi hằng ngày, chỉnh quy trình</label>
+<label class="chk"><input type="checkbox" data-k="k9"> Hồ sơ Google Maps, kênh giao hàng, hình ảnh đã sẵn sàng</label>
+<label class="chk"><input type="checkbox" data-k="k10"> Quy trình sự cố và danh bạ khẩn cấp đã dán tại quầy</label></div></div>
+</div></section>
+
+<div class="part" id="pe"><div class="c"><b>Phần E</b><span>Mở rộng và hành động</span></div></div>
+<section id="global">
+<div class="c">
+<h2><span class="no">24</span><span>Globalization Playbook</span></h2>
+<div class="grid2">
+<div class="card"><h3>Market Selection</h3><p>Chấm điểm từng quốc gia theo coffee culture, purchasing power, rent/labor, competition, regulation, logistics và cultural fit.</p></div>
+<div class="card"><h3>Localization</h3><p>Giữ 70–80% DNA thương hiệu; cho phép menu, pricing, store format và campaign thích nghi địa phương.</p></div>
+<div class="card"><h3>Entry Model</h3><p>Flagship → local operating partner → JV/master franchise → multi-unit network.</p></div>
+<div class="card"><h3>IP & Governance</h3><p>Đăng ký trademark, recipe/IP protection, franchise agreement, QA audit, brand standards và data governance.</p></div>
+</div>
+</div>
+</section>
+
+<section id="dashboard">
+<div class="c">
+<h2><span class="no">25</span><span>Founder Dashboard hàng tuần</span></h2>
+<p class="lead">Mỗi tuần founder chỉ cần trả lời 10 câu hỏi này.</p>
+<div class="grid2">
+<div class="card">
+<ol>
+<li>Doanh thu tăng hay giảm?</li>
+<li>Transactions tăng hay giảm?</li>
+<li>Average ticket thay đổi thế nào?</li>
+<li>Khách mới vs khách quay lại?</li>
+<li>Món nào tạo lợi nhuận tốt?</li>
+</ol>
+</div>
+<div class="card">
+<ol start="6">
+<li>COGS có lệch target?</li>
+<li>Waste ở đâu?</li>
+<li>Nhân sự có bottleneck?</li>
+<li>Store nào đang underperform?</li>
+<li>Tuần này quyết định gì giúp business scale?</li>
+</ol>
+</div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>90-Day Founder Sprint</h3>
+<div class="checklist">
+<label class="check"><input type="checkbox" data-k="o16"> Tuần 1–2: xác định ICP + concept + competitor map</label>
+<label class="check"><input type="checkbox" data-k="o17"> Tuần 3–4: test menu + pricing + brand prototype</label>
+<label class="check"><input type="checkbox" data-k="o18"> Tháng 2: pop-up/pre-order + đo demand</label>
+<label class="check"><input type="checkbox" data-k="o19"> Tháng 3: chốt site + SOP + supplier + POS</label>
+<label class="check"><input type="checkbox" data-k="o20"> Sau launch: daily dashboard + weekly review</label>
+</div>
+</div>
+</div>
+</section>
+
+<section id="d13">
+<div class="c">
+<h2><span class="no">26</span><span>Việc cần làm ngay trong 30 ngày</span></h2>
+<div class="grid">
+<div class="card"><h3>Tuần 1 — Customer Discovery</h3><p>Phỏng vấn 30 người thuộc 2–3 nhóm khách. Ghi lại occasion, budget, đồ uống, lý do chọn quán và lý do không quay lại.</p></div>
+<div class="card"><h3>Tuần 2 — Product Test</h3><p>Test 6–10 công thức. Chấm blind taste, willingness-to-pay, preparation time và COGS.</p></div>
+<div class="card"><h3>Tuần 3 — Brand Test</h3><p>Test 3 tên, 3 visual directions, 3 positioning statements. Đừng hỏi “đẹp không?”, hãy hỏi “bạn nghĩ thương hiệu này dành cho ai?”.</p></div>
+<div class="card"><h3>Tuần 4 — Business Model</h3><p>Lập store P&L giả định, break-even, cash runway, supplier map, risk register và quyết định có nên mở pilot hay test thêm.</p></div>
+</div>
+</div>
+</section>
+
+<section id="d30"><div class="c">
+<h2><span class="no">27</span><span>Checklist &amp; quyết định Đi / Sửa / Dừng cuối tháng 1</span></h2>
+<div class="g2">
+<div class="card"><h3>Việc cần làm</h3>
+<label class="chk"><input type="checkbox" data-k="d1"> Tuần 1: phỏng vấn 30 khách → bảng tổng hợp nhu cầu</label>
+<label class="chk"><input type="checkbox" data-k="d2"> Tuần 1: bản đồ 5 đối thủ gần khu vực dự kiến</label>
+<label class="chk"><input type="checkbox" data-k="d3"> Tuần 2: test 6–10 công thức → bảng chấm món</label>
+<label class="chk"><input type="checkbox" data-k="d4"> Tuần 3: test 3 tên, 3 hướng hình ảnh (hỏi “thương hiệu này dành cho ai?”)</label>
+<label class="chk"><input type="checkbox" data-k="d5"> Tuần 3: báo giá thật (mặt bằng, thiết bị, nguyên liệu)</label>
+<label class="chk"><input type="checkbox" data-k="d6"> Tuần 4: hoàn thiện mô hình tài chính + kịch bản xấu</label>
+<label class="chk"><input type="checkbox" data-k="d7"> Tuần 4: họp quyết định Đi / Sửa / Dừng</label></div>
+<div class="card"><h3>Quyết định cuối tháng</h3><p><b>ĐI</b>: đạt ngưỡng test, mô hình chịu được kịch bản xấu, đủ vốn dự phòng.</p><p><b>SỬA</b>: một trong ba chưa đạt → điều chỉnh concept/giá/chi phí rồi test lại.</p><p><b>DỪNG</b>: không có nhóm khách sẵn sàng trả tiền ở mức giá đủ lãi.</p>
+<h3 style="margin-top:12px">Câu hỏi hằng tuần của founder</h3><p class="sm">Doanh thu và số đơn · giá trị đơn · khách mới/khách quay lại · món lãi tốt · COGS &amp; hao hụt · nhân sự nghẽn ở đâu · tiền mặt còn bao nhiêu tuần · quyết định tuần này.</p></div>
+</div></div></section>
+
+<section id="north">
+<div class="c">
+<div class="callout">
+<h2>North Star</h2>
+<p>Không xây “một quán cà phê thật đẹp”. Hãy xây một <b>coffee brand có trải nghiệm đáng nhớ + economics khỏe + operating system có thể nhân bản</b>.</p>
+<p>Global expansion chỉ là bước cuối của một hệ thống đã chứng minh được khả năng lặp lại.</p>
+</div>
+</div>
+</section>
+</main>
+
+<script>
+(function(){
+try{document.querySelectorAll('input[data-k]').forEach(function(i){var k='cb_'+i.dataset.k;try{i.checked=localStorage.getItem(k)==='1'}catch(e){}i.addEventListener('change',function(){try{localStorage.setItem(k,i.checked?'1':'0')}catch(e){}})})}catch(e){}
+var ids=['tk','od','cg','vr','lb','rt','ot','cx','wc','dn'];
+function v(i){return parseFloat(document.getElementById(i).value)||0}
+function f(n){return Math.round(n).toLocaleString('vi-VN')}
+function row(l,val,c){return '<div class="r"><span>'+l+'</span><b'+(c?' class="'+c+'"':'')+'>'+val+'</b></div>'}
+function calc(){
+var tk=v('tk'),od=v('od'),cg=v('cg')/100,vr=v('vr')/100,fx=v('lb')+v('rt')+v('ot'),cx=v('cx'),wc=v('wc'),dn=v('dn')/100;
+var rev=od*tk*30,gp=rev*(1-cg),ct=rev*(1-cg-vr),eb=ct-fx;
+var unit=tk*(1-cg-vr)*30,be=unit>0?fx/unit:0;
+var pay=eb>0?cx/eb:null,cap=cx+wc*fx;
+var rev2=od*(1-dn)*tk*30,eb2=rev2*(1-cg-vr)-fx;
+document.getElementById('out').innerHTML=
+row('Doanh thu/tháng',f(rev))+row('Lợi nhuận gộp',f(gp))+row('Đóng góp (sau biến phí)',f(ct))+row('Chi phí cố định/tháng',f(fx))+
+row('EBITDA cửa hàng/tháng',f(eb)+' ('+(rev?(eb/rev*100).toFixed(1):0)+'%)',eb>=0?'ok':'bad')+
+row('Hòa vốn',be?f(be)+' đơn/ngày ('+(od?(be/od*100).toFixed(0):0)+'% công suất dự kiến)':'—',be&&be>od*0.8?'bad':'ok')+
+row('Hoàn vốn đầu tư',pay?pay.toFixed(0)+' tháng':'Không hoàn vốn',pay&&pay<=30?'ok':'bad')+
+row('Tổng vốn cần (đầu tư + dự phòng)',f(cap))+
+row('Kịch bản xấu (đơn −'+(dn*100)+'%): EBITDA',f(eb2),eb2>=0?'ok':'bad');
+}
+ids.forEach(function(i){document.getElementById(i).addEventListener('input',calc)});calc();
+})();
+</script>
+<script>
+(function(){
+var P='cb2_';
+function get(k){try{return localStorage.getItem(P+k)}catch(e){return null}}
+function set(k,v){try{localStorage.setItem(P+k,v)}catch(e){}}
+var w=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT,null),nodes=[],n;
+while(n=w.nextNode()){if(/\[[^\]]*\]/.test(n.nodeValue)&&!/^(SCRIPT|INPUT|TEXTAREA)$/.test(n.parentNode.nodeName))nodes.push(n)}
+var idx=0;
+nodes.forEach(function(t){
+ var parts=t.nodeValue.split(/(\[[^\]]*\])/),frag=document.createDocumentFragment();
+ parts.forEach(function(x){
+  if(/^\[[^\]]*\]$/.test(x)){
+   var k='f'+(idx++),sp=document.createElement('span');
+   sp.className='fill';sp.contentEditable='true';sp.spellcheck=false;sp.dataset.def=x;
+   var sv=get(k);sp.textContent=(sv!==null&&sv!=='')?sv:x;
+   sp.addEventListener('click',function(e){e.preventDefault();e.stopPropagation()});
+   sp.addEventListener('focus',function(){var r=document.createRange();r.selectNodeContents(sp);var q=getSelection();q.removeAllRanges();q.addRange(r)});
+   sp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();sp.blur()}});
+   sp.addEventListener('blur',function(){var v=sp.textContent.trim();if(!v){sp.textContent=sp.dataset.def;set(k,'')}else set(k,v)});
+   frag.appendChild(sp);
+  }else if(x){frag.appendChild(document.createTextNode(x))}
+ });
+ t.parentNode.replaceChild(frag,t);
+});
+['tk','od','cg','vr','lb','rt','ot','cx','wc','dn'].forEach(function(i){
+ var el=document.getElementById(i),sv=get('c_'+i);
+ if(sv!==null&&sv!=='')el.value=sv;
+ el.addEventListener('input',function(){set('c_'+i,el.value)});
+ el.dispatchEvent(new Event('input'));
+});
+document.getElementById('rs').addEventListener('click',function(){
+ if(!confirm('Xóa toàn bộ dữ liệu đã điền và tích trên trang này?'))return;
+ try{Object.keys(localStorage).forEach(function(k){if(k.indexOf(P)===0||k.indexOf('cb_')===0)localStorage.removeItem(k)})}catch(e){}
+ location.reload();
+});
+})();
+</script>
+<script>
+(function(){var L=[].slice.call(document.querySelectorAll('nav a')),T=L.map(function(a){return document.querySelector(a.getAttribute('href'))}),q=0;
+function u(){q=0;var k=0;T.forEach(function(e,i){if(e&&e.getBoundingClientRect().top<=120)k=i});L.forEach(function(a,i){a.classList.toggle('on',i===k);if(i===k&&a.scrollIntoView&&a.parentNode.scrollWidth>a.parentNode.clientWidth)a.parentNode.scrollLeft=a.offsetLeft-40})}
+addEventListener('scroll',function(){if(!q){q=1;requestAnimationFrame(u)}},{passive:true});u()})();
+</script>
+</body>
+</html>
